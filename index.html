@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Renzo Rivera — Civil Engineer · Quantity Surveyor · Cost Estimator</title>
+<meta name="description" content="Results-driven Civil Engineer and Estimator with 5+ years of experience specializing in quantity takeoffs and cost estimation for US and Australian projects." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #e9e9e7;
+    --bg-alt: #dedcd8;
+    --ink: #2b2b2b;
+    --ink-soft: #555553;
+    --ink-mute: #8a8a86;
+    --line: #bfbdb7;
+    --chip: #4a4a47;
+    --chip-ink: #f3f2ef;
+    --accent: #2b2b2b;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Archivo', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Subtle grain overlay for texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  ::selection { background: var(--ink); color: var(--bg); }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    gap: 8px;
+    padding: 6px;
+    background: rgba(233, 233, 231, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+  }
+
+  nav a {
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    border-radius: 999px;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    color: var(--ink-soft);
+  }
+
+  nav a:hover { color: var(--ink); }
+
+  nav a.contact-btn {
+    background: var(--chip);
+    color: var(--chip-ink);
+  }
+
+  nav a.contact-btn:hover {
+    background: var(--ink);
+    color: var(--bg);
+  }
+
+  /* ---------- SHARED ---------- */
+  section {
+    position: relative;
+    padding: 140px 64px;
+    max-width: 1440px;
+    margin: 0 auto;
+    z-index: 2;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--chip);
+    color: var(--chip-ink);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .chip-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 18px;
+    border: 1px solid var(--ink-soft);
+    border-radius: 999px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--ink-soft);
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+  }
+
+  .section-label .chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: 900;
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: end;
+    padding-top: 160px;
+    padding-bottom: 64px;
+  }
+
+  .hero-left { position: relative; }
+
+  .hero-chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+  }
+
+  .hero h1 {
+    font-size: clamp(72px, 13vw, 200px);
+    margin-bottom: 48px;
+  }
+
+  .hero h1 .line {
+    display: block;
+    overflow: hidden;
+  }
+
+  .hero h1 .line span {
+    display: inline-block;
+    animation: riseUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .hero h1 .line:nth-child(2) span { animation-delay: 0.1s; }
+
+  @keyframes riseUp {
+    from { transform: translateY(110%); }
+    to { transform: translateY(0); }
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .hero-meta .chip { background: var(--chip); }
+
+  .hero-right {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background: var(--bg-alt);
+    border-radius: 4px;
+    overflow: hidden;
+    align-self: stretch;
+  }
+
+  /* SVG crane illustration fills this container */
+  .crane-scene {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-right::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(43, 43, 43, 0.08));
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    z-index: 2;
+  }
+
+  .hero-tag .dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--ink);
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.4); }
+  }
+
+  /* ---------- MARQUEE ---------- */
+  .marquee {
+    position: relative;
+    padding: 32px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 56px;
+    white-space: nowrap;
+    animation: scroll 40s linear infinite;
+    width: max-content;
+  }
+
+  .marquee-item {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 48px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: 56px;
+  }
+
+  .marquee-item::after {
+    content: '◆';
+    color: var(--ink-mute);
+    font-size: 24px;
+  }
+
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about-label { position: sticky; top: 120px; }
+
+  .about h2 {
+    font-size: clamp(48px, 7vw, 96px);
+    margin-bottom: 32px;
+  }
+
+  .about-text {
+    font-size: clamp(20px, 2vw, 28px);
+    line-height: 1.35;
+    color: var(--ink);
+    font-weight: 400;
+    max-width: 640px;
+  }
+
+  .about-text strong { font-weight: 600; }
+
+  .about-meta {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+
+  .stat .num {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    display: block;
+  }
+
+  .stat .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin-top: 12px;
+    display: block;
+  }
+
+  /* ---------- SERVICES / STRENGTH ---------- */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+
+  .services-col h2 {
+    font-size: clamp(48px, 8vw, 120px);
+    margin-bottom: 32px;
+  }
+
+  .col-services { grid-column: 1 / 7; }
+  .col-strength { grid-column: 7 / 13; border-left: 1px solid var(--line); padding-left: 40px; }
+
+  .svc-list { list-style: none; }
+
+  .svc-list li {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: padding 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    cursor: default;
+  }
+
+  .svc-list li:hover { padding-left: 16px; }
+
+  .svc-list li .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-mute);
+    letter-spacing: 0.05em;
+  }
+
+  .svc-list li::after {
+    content: '→';
+    margin-left: auto;
+    opacity: 0;
+    transform: translateX(-12px);
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    color: var(--ink-soft);
+  }
+
+  .svc-list li:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* ---------- TOOLS ---------- */
+  .tools {
+    padding-top: 80px;
+  }
+
+  .tools h2 {
+    font-size: clamp(56px, 9vw, 140px);
+    margin-bottom: 64px;
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .tool-group h4 {
+    font-family: 'Archivo', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+  }
+
+  .tool-group ul { list-style: none; }
+
+  .tool-group li {
+    padding: 8px 0;
+    font-size: 15px;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.2s ease;
+  }
+
+  .tool-group li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--ink-mute);
+    border-radius: 50%;
+    transition: background 0.2s ease;
+  }
+
+  .tool-group li:hover { color: var(--ink); }
+  .tool-group li:hover::before { background: var(--ink); }
+
+  /* ---------- PROJECTS ---------- */
+  .projects h2 {
+    font-size: clamp(72px, 12vw, 180px);
+    margin-bottom: 64px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .project-card {
+    background: var(--bg);
+    padding: 40px 32px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--ink);
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 0;
+  }
+
+  .project-card:hover::before { transform: translateY(0); }
+  .project-card:hover .card-num,
+  .project-card:hover h3,
+  .project-card:hover .card-desc,
+  .project-card:hover .card-arrow { color: var(--bg); }
+  .project-card:hover .card-arrow { transform: translate(4px, -4px); }
+
+  .project-card > * { position: relative; z-index: 1; }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .card-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+    transition: color 0.4s ease;
+  }
+
+  .card-arrow {
+    font-size: 20px;
+    color: var(--ink-soft);
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .project-card h3 {
+    font-size: 36px;
+    margin-top: 64px;
+    margin-bottom: 16px;
+    transition: color 0.4s ease;
+  }
+
+  .card-desc {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    transition: color 0.4s ease;
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact {
+    padding-bottom: 80px;
+  }
+
+  .contact h2 {
+    font-size: clamp(100px, 18vw, 260px);
+    margin-bottom: 48px;
+  }
+
+  .contact-pitch {
+    font-size: clamp(18px, 1.6vw, 22px);
+    max-width: 680px;
+    line-height: 1.5;
+    margin-bottom: 72px;
+    color: var(--ink);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+    padding-top: 48px;
+    border-top: 1px solid var(--line);
+  }
+
+  .contact-block h5 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 24px;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .contact-link {
+    font-family: 'Archivo', sans-serif;
+    font-size: clamp(22px, 2.6vw, 32px);
+    font-weight: 500;
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    width: fit-content;
+    padding-bottom: 4px;
+  }
+
+  .contact-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--ink);
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .contact-link:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
+  .contact-link .arrow {
+    font-size: 0.7em;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .contact-link:hover .arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    padding: 32px 64px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ---------- REVEAL ON SCROLL ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
+                transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px) {
+    section { padding: 80px 24px; }
+    nav { gap: 4px; padding: 4px; top: 12px; }
+    nav a { padding: 8px 12px; font-size: 11px; }
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      padding-top: 140px;
+      gap: 48px;
+    }
+    .hero-right { aspect-ratio: 3/2; }
+    .about { grid-template-columns: 1fr; gap: 32px; }
+    .about-label { position: static; }
+    .about-meta { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .services-grid { display: flex; flex-direction: column; gap: 48px; }
+    .col-strength { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 32px; }
+    .tools-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .marquee-item { font-size: 32px; gap: 32px; }
+    .marquee-track { gap: 32px; }
+    footer { padding: 24px; flex-direction: column; gap: 12px; }
+  }
+
+  @media (max-width: 480px) {
+    .tools-grid { grid-template-columns: 1fr; }
+    .svc-list li { font-size: 16px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#tools">Tools</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact" class="contact-btn">Get In Touch</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-left">
+    <div class="hero-chips">
+      <span class="chip">Civil Engineer</span>
+      <span class="chip">Quantity Surveyor</span>
+      <span class="chip">Cost Estimator</span>
+    </div>
+    <h1>
+      <span class="line"><span>RENZO</span></span>
+      <span class="line"><span>RIVERA</span></span>
+    </h1>
+    <div class="hero-meta">
+      <span class="chip-outline">PH · Remote</span>
+      <span class="chip-outline">5+ Years</span>
+      <span class="chip-outline">US · AU Projects</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <!-- Construction crane illustration - matches PDF aesthetic -->
+    <svg class="crane-scene" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#dedcd8"/>
+          <stop offset="100%" stop-color="#c9c7c2"/>
+        </linearGradient>
+      </defs>
+      <rect width="400" height="500" fill="url(#skyGrad)"/>
+
+      <!-- Building silhouette background -->
+      <g opacity="0.25" fill="#4a4a47">
+        <rect x="20" y="280" width="110" height="220"/>
+        <rect x="270" y="320" width="100" height="180"/>
+      </g>
+
+      <!-- Building grid lines -->
+      <g stroke="#8a8a86" stroke-width="0.5" opacity="0.6">
+        <line x1="20" y1="310" x2="130" y2="310"/>
+        <line x1="20" y1="340" x2="130" y2="340"/>
+        <line x1="20" y1="370" x2="130" y2="370"/>
+        <line x1="20" y1="400" x2="130" y2="400"/>
+        <line x1="20" y1="430" x2="130" y2="430"/>
+        <line x1="20" y1="460" x2="130" y2="460"/>
+        <line x1="45" y1="280" x2="45" y2="500"/>
+        <line x1="75" y1="280" x2="75" y2="500"/>
+        <line x1="105" y1="280" x2="105" y2="500"/>
+        <line x1="270" y1="350" x2="370" y2="350"/>
+        <line x1="270" y1="380" x2="370" y2="380"/>
+        <line x1="270" y1="410" x2="370" y2="410"/>
+        <line x1="270" y1="440" x2="370" y2="440"/>
+        <line x1="270" y1="470" x2="370" y2="470"/>
+        <line x1="300" y1="320" x2="300" y2="500"/>
+        <line x1="335" y1="320" x2="335" y2="500"/>
+      </g>
+
+      <!-- Main tower crane -->
+      <g stroke="#2b2b2b" stroke-width="1.3" fill="none">
+        <!-- Vertical mast -->
+        <line x1="200" y1="110" x2="200" y2="450"/>
+        <line x1="215" y1="110" x2="215" y2="450"/>
+        <!-- X bracing on mast -->
+        <g>
+          <line x1="200" y1="130" x2="215" y2="160"/><line x1="215" y1="130" x2="200" y2="160"/>
+          <line x1="200" y1="160" x2="215" y2="190"/><line x1="215" y1="160" x2="200" y2="190"/>
+          <line x1="200" y1="190" x2="215" y2="220"/><line x1="215" y1="190" x2="200" y2="220"/>
+          <line x1="200" y1="220" x2="215" y2="250"/><line x1="215" y1="220" x2="200" y2="250"/>
+          <line x1="200" y1="250" x2="215" y2="280"/><line x1="215" y1="250" x2="200" y2="280"/>
+          <line x1="200" y1="280" x2="215" y2="310"/><line x1="215" y1="280" x2="200" y2="310"/>
+          <line x1="200" y1="310" x2="215" y2="340"/><line x1="215" y1="310" x2="200" y2="340"/>
+          <line x1="200" y1="340" x2="215" y2="370"/><line x1="215" y1="340" x2="200" y2="370"/>
+          <line x1="200" y1="370" x2="215" y2="400"/><line x1="215" y1="370" x2="200" y2="400"/>
+          <line x1="200" y1="400" x2="215" y2="430"/><line x1="215" y1="400" x2="200" y2="430"/>
+          <!-- Horizontal ties -->
+          <line x1="200" y1="160" x2="215" y2="160"/>
+          <line x1="200" y1="190" x2="215" y2="190"/>
+          <line x1="200" y1="220" x2="215" y2="220"/>
+          <line x1="200" y1="250" x2="215" y2="250"/>
+          <line x1="200" y1="280" x2="215" y2="280"/>
+          <line x1="200" y1="310" x2="215" y2="310"/>
+          <line x1="200" y1="340" x2="215" y2="340"/>
+          <line x1="200" y1="370" x2="215" y2="370"/>
+          <line x1="200" y1="400" x2="215" y2="400"/>
+        </g>
+
+        <!-- Cab at top -->
+        <rect x="196" y="95" width="23" height="18" fill="#dedcd8"/>
+
+        <!-- Counter-jib (short arm left) -->
+        <line x1="200" y1="95" x2="120" y2="95"/>
+        <line x1="200" y1="115" x2="120" y2="115"/>
+        <line x1="120" y1="95" x2="120" y2="115"/>
+        <g>
+          <line x1="130" y1="95" x2="140" y2="115"/>
+          <line x1="140" y1="95" x2="150" y2="115"/>
+          <line x1="150" y1="95" x2="160" y2="115"/>
+          <line x1="160" y1="95" x2="170" y2="115"/>
+          <line x1="170" y1="95" x2="180" y2="115"/>
+          <line x1="180" y1="95" x2="190" y2="115"/>
+        </g>
+        <!-- Counterweight -->
+        <rect x="115" y="115" width="18" height="12" fill="#4a4a47"/>
+
+        <!-- Main jib (long arm right) with triangular cable support -->
+        <line x1="215" y1="95" x2="380" y2="95"/>
+        <line x1="215" y1="115" x2="380" y2="115"/>
+        <line x1="380" y1="95" x2="380" y2="115"/>
+        <!-- A-frame tower on top for cable -->
+        <line x1="207" y1="95" x2="245" y2="55"/>
+        <line x1="245" y1="55" x2="207" y2="50"/>
+        <line x1="245" y1="55" x2="215" y2="95"/>
+        <!-- Tie cables to jib -->
+        <line x1="245" y1="55" x2="285" y2="95"/>
+        <line x1="245" y1="55" x2="330" y2="95"/>
+        <line x1="245" y1="55" x2="375" y2="95"/>
+        <!-- Jib triangular bracing -->
+        <g>
+          <line x1="225" y1="95" x2="235" y2="115"/>
+          <line x1="235" y1="95" x2="245" y2="115"/>
+          <line x1="245" y1="95" x2="255" y2="115"/>
+          <line x1="255" y1="95" x2="265" y2="115"/>
+          <line x1="265" y1="95" x2="275" y2="115"/>
+          <line x1="275" y1="95" x2="285" y2="115"/>
+          <line x1="285" y1="95" x2="295" y2="115"/>
+          <line x1="295" y1="95" x2="305" y2="115"/>
+          <line x1="305" y1="95" x2="315" y2="115"/>
+          <line x1="315" y1="95" x2="325" y2="115"/>
+          <line x1="325" y1="95" x2="335" y2="115"/>
+          <line x1="335" y1="95" x2="345" y2="115"/>
+          <line x1="345" y1="95" x2="355" y2="115"/>
+          <line x1="355" y1="95" x2="365" y2="115"/>
+          <line x1="365" y1="95" x2="375" y2="115"/>
+        </g>
+
+        <!-- Trolley + hook cable -->
+        <rect x="310" y="115" width="14" height="5" fill="#2b2b2b"/>
+        <line x1="317" y1="120" x2="317" y2="200" class="hook-cable"/>
+        <rect x="312" y="200" width="10" height="8" fill="#2b2b2b" class="hook-block"/>
+      </g>
+
+      <!-- Second smaller crane in background -->
+      <g stroke="#2b2b2b" stroke-width="0.8" fill="none" opacity="0.45">
+        <line x1="60" y1="180" x2="60" y2="300"/>
+        <line x1="70" y1="180" x2="70" y2="300"/>
+        <g>
+          <line x1="60" y1="200" x2="70" y2="220"/><line x1="70" y1="200" x2="60" y2="220"/>
+          <line x1="60" y1="220" x2="70" y2="240"/><line x1="70" y1="220" x2="60" y2="240"/>
+          <line x1="60" y1="240" x2="70" y2="260"/><line x1="70" y1="240" x2="60" y2="260"/>
+          <line x1="60" y1="260" x2="70" y2="280"/><line x1="70" y1="260" x2="60" y2="280"/>
+        </g>
+        <line x1="60" y1="180" x2="20" y2="180"/>
+        <line x1="60" y1="195" x2="20" y2="195"/>
+        <line x1="70" y1="180" x2="160" y2="180"/>
+        <line x1="70" y1="195" x2="160" y2="195"/>
+        <line x1="65" y1="180" x2="80" y2="160"/>
+        <line x1="80" y1="160" x2="120" y2="180"/>
+      </g>
+
+      <!-- Ground line -->
+      <line x1="0" y1="480" x2="400" y2="480" stroke="#2b2b2b" stroke-width="1" opacity="0.3"/>
+    </svg>
+
+    <div class="hero-tag">
+      <span><span class="dot"></span>AVAILABLE FOR WORK</span>
+      <span>PORTFOLIO · 2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">QUANTITY TAKEOFFS</span>
+    <span class="marquee-item">COST ESTIMATION</span>
+    <span class="marquee-item">BOQ</span>
+    <span class="marquee-item">PLAN REVIEW</span>
+    <span class="marquee-item">BUILDERTREND</span>
+    <span class="marquee-item">PLANSWIFT</span>
+    <span class="marquee-item">BLUEBEAM</span>
+    <!-- duplicate for seamless loop -->
+    <span class="marquee-item">QUANTITY TAKEOFFS</span>
+    <span class="marquee-item">COST ESTIMATION</span>
+    <span class="marquee-item">BOQ</span>
+    <span class="marquee-item">PLAN REVIEW</span>
+    <span class="marquee-item">BUILDERTREND</span>
+    <span class="marquee-item">PLANSWIFT</span>
+    <span class="marquee-item">BLUEBEAM</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about">
+    <div class="about-label">
+      <div class="section-label">
+        <span class="chip">About Me</span>
+        <span class="chip-outline">02</span>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="reveal">ABOUT<br/>ME.</h2>
+      <p class="about-text reveal">
+        Results-driven <strong>Civil Engineer and Estimator</strong> with <strong>5+ years</strong> of experience specializing in quantity takeoffs and cost estimation for <strong>US and Australian</strong> projects. Proficient in PlanSwift, Bluebeam, and Excel — delivering accurate estimates and efficient workflows.
+      </p>
+
+      <div class="about-meta reveal">
+        <div class="stat">
+          <span class="num" data-count="470">0+</span>
+          <span class="label">Projects Awarded</span>
+        </div>
+        <div class="stat">
+          <span class="num" data-count="5">0+</span>
+          <span class="label">Years Experience</span>
+        </div>
+        <div class="stat">
+          <span class="num">2</span>
+          <span class="label">Markets · US & AU</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES + KEY STRENGTH -->
+<section id="services">
+  <div class="section-label">
+    <div class="chips">
+      <span class="chip">Services</span>
+      <span class="chip">Key Strength</span>
+    </div>
+    <span class="chip-outline">03</span>
+  </div>
+
+  <div class="services-grid">
+    <div class="col-services services-col">
+      <h2 class="reveal">SERVICES</h2>
+      <ul class="svc-list">
+        <li class="reveal"><span class="num">01</span>Quantity Takeoffs</li>
+        <li class="reveal"><span class="num">02</span>Cost Estimation / BOQ</li>
+        <li class="reveal"><span class="num">03</span>Countertop Estimating</li>
+        <li class="reveal"><span class="num">04</span>Plan Review &amp; Scope Checking</li>
+        <li class="reveal"><span class="num">05</span>Purchase Orders (Buildertrend)</li>
+        <li class="reveal"><span class="num">06</span>Excel-Based Estimating Systems</li>
+      </ul>
+    </div>
+
+    <div class="col-strength services-col">
+      <h2 class="reveal">KEY<br/>STRENGTH</h2>
+      <ul class="svc-list">
+        <li class="reveal"><span class="num">01</span>470+ Projects Awarded (local)</li>
+        <li class="reveal"><span class="num">02</span>US &amp; AU Project Experience</li>
+        <li class="reveal"><span class="num">03</span>Excel Automation for Estimating</li>
+        <li class="reveal"><span class="num">04</span>Fast &amp; Accurate Takeoffs and Estimates</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="section-label">
+    <span class="chip">Tools</span>
+    <span class="chip-outline">04</span>
+  </div>
+
+  <div class="tools">
+    <h2 class="reveal">TOOLS.</h2>
+
+    <div class="tools-grid">
+      <div class="tool-group reveal">
+        <h4>Construction &amp; PM</h4>
+        <ul>
+          <li>Buildertrend</li>
+          <li>PlanSwift (ConstructConnect)</li>
+        </ul>
+      </div>
+
+      <div class="tool-group reveal">
+        <h4>Design &amp; Documentation</h4>
+        <ul>
+          <li>AutoCAD</li>
+          <li>Bluebeam</li>
+          <li>Canva</li>
+        </ul>
+      </div>
+
+      <div class="tool-group reveal">
+        <h4>Communication</h4>
+        <ul>
+          <li>WhatsApp</li>
+          <li>Slack</li>
+          <li>Discord</li>
+        </ul>
+      </div>
+
+      <div class="tool-group reveal">
+        <h4>Productivity &amp; CRM</h4>
+        <ul>
+          <li>Google Workspace</li>
+          <li>Microsoft 365</li>
+          <li>Zoho Workplace</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">
+    <span class="chip">Projects Portfolio</span>
+    <span class="chip-outline">05</span>
+  </div>
+
+  <div class="projects">
+    <h2 class="reveal">PROJECTS<br/>PORTFOLIO.</h2>
+
+    <div class="projects-grid">
+      <a class="project-card reveal" href="https://drive.google.com/drive/folders/1fO9snUmKg6Mjdo1gB-RRKQvifZqKv4Tx" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="card-num">01 / COUNTERTOPS</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <div>
+          <h3>Countertops</h3>
+          <p class="card-desc">Kitchen, vanity, and sill takeoffs with Excel-based pricing.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="https://drive.google.com/drive/folders/1AxAFyZMwaauMEPnyLDrVmqxedQIqYE9L" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="card-num">02 / ROOFING</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <div>
+          <h3>Roofing</h3>
+          <p class="card-desc">Roof area, slopes, and material estimates.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="https://drive.google.com/drive/folders/1rCVJmYe9P7Em2E-MsGsy_FulJXN9UzPQ" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="card-num">03 / FRAMING</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <div>
+          <h3>Lumber Framing</h3>
+          <p class="card-desc">Wall and roof framing quantity takeoffs.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="https://drive.google.com/drive/folders/1OBmRuTYwa2LGCxNtd8BDW14XEH2Ua1B6" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="card-num">04 / PAINTING</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <div>
+          <h3>Painting</h3>
+          <p class="card-desc">Surface area takeoffs and coating material estimates.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="https://drive.google.com/drive/folders/10SH3i_R-nkZQ-bYhncyxaAMR1GH7RNJ-" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="card-num">05 / CONCRETE</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <div>
+          <h3>Concrete Works</h3>
+          <p class="card-desc">Slabs, footings, and structural elements.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="https://drive.google.com/drive/folders/1QaWn44IYEqvVsS-j_tNx-zHT2xlxI2FF" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="card-num">06 / PLUMBING</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <div>
+          <h3>Plumbing</h3>
+          <p class="card-desc">Basic takeoffs and material estimation.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="https://drive.google.com/drive/folders/1gdLq0nyIqvy8TU9rI09fxwGiRU4dT6tV" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="card-num">07 / TILING</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <div>
+          <h3>Tiling</h3>
+          <p class="card-desc">Wall and floor tile takeoffs including layout and coverage estimates.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="https://drive.google.com/drive/folders/140hKVbVA0qoOqFGi4_dU8yZFCHLqJYYC" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="card-num">08 / FLOORING</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <div>
+          <h3>Flooring</h3>
+          <p class="card-desc">Floor area takeoffs, material quantities, and layout calculations.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="https://drive.google.com/drive/folders/1mFnVpQtQGu2DQM4wV_lyNoi6A7avYIVD" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="card-num">09 / MASONRY</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <div>
+          <h3>Masonry</h3>
+          <p class="card-desc">Blockwork, wall quantities, and structural masonry takeoffs.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="https://drive.google.com/drive/folders/1nuQNtRXWHQpSZ6Zzyc9jt6Xc7o4j4lJm" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="card-num">10 / FENCING</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <div>
+          <h3>Fencing</h3>
+          <p class="card-desc">Perimeter measurements and material takeoffs for fence systems.</p>
+        </div>
+      </a>
+
+      <!-- filler cards to keep grid full on 3-col layout -->
+      <a class="project-card reveal" style="background: var(--bg-alt);" href="mailto:rivera.renzo15@gmail.com?subject=New%20Project%20Inquiry&body=Hi%20Renzo%2C%0A%0AI%27d%20like%20to%20discuss%20a%20potential%20project%20with%20you.%0A%0AProject%20type%3A%20%0AScope%3A%20%0ATimeline%3A%20%0ALocation%3A%20%0A%0AAdditional%20details%3A%0A%0A%0AThanks%2C">
+        <div class="card-top">
+          <span class="card-num">—</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <div>
+          <h3 style="font-size: 24px; line-height: 1.1;">Have a project in mind?</h3>
+          <p class="card-desc" style="margin-top: 12px;">Let's talk scope, drawings, and timelines.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" style="background: var(--bg-alt);" href="mailto:rivera.renzo15@gmail.com?subject=Quote%20Request%20%E2%80%93%20Quantity%20Takeoff%20%26%20Estimate&body=Hi%20Renzo%2C%0A%0AI%27d%20like%20to%20request%20a%20quote%20for%20the%20following%20project%3A%0A%0ATrade%2FScope%3A%20%0AProject%20location%3A%20%0AApprox.%20size%3A%20%0ADeadline%3A%20%0A%0APlans%2Fdrawings%3A%20%5Battached%20or%20link%5D%0A%0AThanks%2C">
+        <div class="card-top">
+          <span class="card-num">✉ EMAIL</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <div>
+          <h3 style="font-size: 24px; line-height: 1.1;">Request a quote →</h3>
+          <p class="card-desc" style="margin-top: 12px;">Typical turnaround: 24–72 hours.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label">
+    <span class="chip">Get In Touch</span>
+    <span class="chip-outline">07</span>
+  </div>
+
+  <h2 class="reveal">THANK<br/>YOU.</h2>
+
+  <p class="contact-pitch reveal">
+    My work speaks for itself — <strong>470+ awarded projects</strong>, precise takeoffs, and estimates built on accuracy and efficiency. If you need a civil engineer and estimator who gets it right the first time, you've found the right person. I look forward to working with you.
+  </p>
+
+  <div class="contact-grid">
+    <div class="contact-block reveal">
+      <h5>— Direct</h5>
+      <div class="contact-links">
+        <a class="contact-link" href="tel:+639353171737">
+          +63 935 317 1737 <span class="arrow">↗</span>
+        </a>
+        <a class="contact-link" href="mailto:rivera.renzo15@gmail.com">
+          rivera.renzo15@gmail.com <span class="arrow">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-block reveal">
+      <h5>— Online</h5>
+      <div class="contact-links">
+        <a class="contact-link" href="https://www.linkedin.com/in/riverarenzo" target="_blank" rel="noopener">
+          LinkedIn / riverarenzo <span class="arrow">↗</span>
+        </a>
+        <a class="contact-link" href="#top">
+          Philippines · Remote <span class="arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Renzo Rivera</span>
+  <span>Civil Engineer · Quantity Surveyor · Cost Estimator</span>
+  <span>Built with precision</span>
+</footer>
+
+<script>
+  // Reveal on scroll (IntersectionObserver)
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Animated number count-up for stats
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        const duration = 1800;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.floor(target * eased) + '+';
+          if (p < 1) requestAnimationFrame(tick);
+          else el.textContent = target + '+';
+        };
+        requestAnimationFrame(tick);
+        countObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.stat .num[data-count]').forEach(el => countObserver.observe(el));
+
+  // Subtle parallax on hero crane scene
+  const crane = document.querySelector('.crane-scene');
+  if (crane && window.matchMedia('(min-width: 900px)').matches) {
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y < 800) {
+        crane.style.transform = `translateY(${y * 0.08}px)`;
+      }
+    }, { passive: true });
+  }
+</script>
+
+</body>
+</html>
