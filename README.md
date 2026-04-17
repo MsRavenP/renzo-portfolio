@@ -1,2 +1,2 @@
-# renzo-portfolio
+# renzo-rivera
 Portfolio site for Renzo Rivera
